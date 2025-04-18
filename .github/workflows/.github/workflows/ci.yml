@@ -1,1 +1,29 @@
+name: Validate HTML Files
 
+# Trigger the workflow on specific events
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Define the jobs that make up the workflow
+jobs:
+  html-validation:
+    runs-on: ubuntu-latest # The virtual machine on which the job will run
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Install tidy (a tool to validate HTML)
+      - name: Install tidy
+        run: sudo apt-get install -y tidy
+
+      # Step 3: Validate HTML files
+      - name: Validate HTML
+        run: |
+          tidy -e index.html

@@ -1,0 +1,18 @@
+ody {
+  text-align: center;
+  font-family: "Barlow Condensed", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+a{
+  border: 2px double black;
+}
+a:hover{
+  color: red;
+}
+#tennis_silhouette_image{
+  margin: auto;
+}
+.tournaments{
+  border: 2px double black;
+}
